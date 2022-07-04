@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -18,7 +18,7 @@ model Post {
 
 model User {
   id    Int     @id @default(autoincrement())
-  email String  @unique
+  email String
   name  String?
   posts Post[]
 }
